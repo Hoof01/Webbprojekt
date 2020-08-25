@@ -7,30 +7,57 @@
     <title>Hem</title>
 </head>
 <body>
-    <nav class="container">
-        <nav class="navbar" role="navigation" aria-label="main naviagtion">
-            <div class="navbar-brand">
-                <a class="navbar" href="home.html">
-                    <img src="bilder/loggo.png" width="130" height="35">
-                </a>
-                <a role="button" class="narbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
-                    <span aria-hidden="true"></span>
-
-                </a>
+    <main class="conatiner">
+    <section class="hero is-small is-info is-bold">
+        <div class="hero-body">
+            <div class="level-item has texted-centered">
+            <img src="bilder/loggo.png" width="220" height="60">
             </div>
+        </div>
+    </section>
+
+        <nav class="navbar" role="navigation" aria-label="main naviagtion">
 
             <div id="navbar" class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="upg4/index.htm">
-                        Uppgift 4
+                    <a class="navbar-item is-size-5" href="upg4/index.htm">
+                        Home
                     </a>
-
-
+                    
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            Uppgifter
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="upg4/index.htm">
+                            Uppgift 4
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <div class="tile is-child box">
+                    <h1 class="title is-2 has-text-centered">
+                        Välkommen
+                    </h1>
 
-    </nav>
-    
+                    <p class="is-size-4">
+                        <strong>Hej!</strong> Mitt namn är Jakob och är 19 år. På den här hemsidan kommer man kunna följa min utveckling inom webbutveckling, hur jag tänkt och hur jag har löst uppgifter och problem.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                Gjord av <strong>Jakob Hoof</strong> 
+            </p>
+        </div>
+    </footer>
+    </main>
 </body>
 </html>
