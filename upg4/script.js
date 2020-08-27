@@ -24,12 +24,12 @@ function doCalculations(){
 
     area = 3.14159 * length * witdh / 4;
 
-    resultElement.innerHTML += "<p>Ellipsens area blir: " + area + " m<sup>2</sup>.</p>";
+    resultElement.innerHTML += "<p>Ellipsens area blir: " + Math.round(area) + " m<sup>2</sup>.</p>";
     resultElement.innerHTML += "<p>Längden " + length + " meter blir:</p>";
     distance = length / conv[0] * 100;
-    resultElement.innerHTML += "<p>" + distance + " " + unit[0] + "</p>";
+    resultElement.innerHTML += "<p>" + Math.round(distance) + " " + unit[0] + "</p>";
     distance = length / conv[1] * 100;
-    resultElement.innerHTML += "<p>" + distance + " " + unit[1] + "</p>";
+    resultElement.innerHTML += "<p>" + Math.round(distance) + " " + unit[1] + "</p>";
     distance = length / conv[2] * 100;
     resultElement.innerHTML += "<p>" + distance + " " + unit[2] + "</p>";
 
@@ -39,5 +39,5 @@ function doCalculations(){
 
     area = (length / conv[1]*100) * (witdh / conv[1]*100) / 2;
 
-    resultElement.innerHTML += "<p>Trinagels area i fot blir: " + area + "  " + unit[1] + " <sup>2</sup>.</p>"
+    resultElement.innerHTML += "<p>Trinagels area i fot blir: " + Math.round(area) + "  " + unit[1] + " <sup>2</sup>.</p>"
 }
