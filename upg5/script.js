@@ -24,23 +24,13 @@ function showFruit(){
     let nr; //Variabel för numret i textfältet
     let fruitURL; //Variabel för adress till frukt bilderna
 
-    nr = Number(inputElem[1].value);
-
-    if (isNaN(nr)) {
-        msgElem.innerHTML = "Inga bokstäver bara siffror"
-        return;
-    }
-    if (nr<1 || nr>5) {
-        msgElem.innerHTML = "Bara siffror mellan 1-5"
-        return;
-    }
-    nr = parseInt(nr);
-    inputElem[1].value = nr;
+    nr = getNr(1,5);
+    if(nr !== null){
 
     fruitURL ="./pics/fruit" + nr + ".jpg";
     document.getElementById("fruitImg").src = fruitURL;
-
     fruitNr = nr;
+    }
 }
 function checkName(){
     let name;
@@ -58,36 +48,40 @@ function checkName(){
         return;
     }
 }
-function getNr(){
+function getNr(elemNr, high){
     let nr;
     
-    nr = Number(inputElem[3].value);
+    nr = Number(inputElem[elemNr].value);
 
     if (isNaN(nr)) {
         msgElem.innerHTML = "Inga bokstäver bara siffror"
-        return;
+        return null;
     }
-    if (nr<1 || nr>9) {
+    if (nr<1 || nr>high) {
         msgElem.innerHTML = "Bara siffror mellan 1-9"
-        return;
+        return null;
     }
-    nr = parseInt(nr);
-    inputElem[3].value = nr;
+    return nr;
 }
 function addFruits(){
     let amount; //Talet som läses in från de undre textfältet
     let imgList; //En textsträng med en HTML-kod som ska läggas in i elementet "selectedFruits"
     let i;
     
-    if(fruitNr === 0){
-        msgElem.innerHTML = "Välj ett nummer först"
-        return;
-    }
+    amount = getNr(3,9);
 
-    imgList="";
-    for(i=0; i<amount; i++){
-        imgList+="<img src='./pics/fruit" + fruitNr + ".jpg' alt='frukt'>";
+    if(amount !== null){
+
+        if(fruitNr === 0){
+            msgElem.innerHTML = "Välj ett nummer först"
+            return;
+        }
+
+        imgList="";
+        for(i=0; i<amount; i++){
+        imgList +="<img src='./pics/fruit" + fruitNr + ".jpg' alt='frukt'>";       
+        }
+        selFruitsElem.innerHTML += imgList; 
     }
-    
 
 }
