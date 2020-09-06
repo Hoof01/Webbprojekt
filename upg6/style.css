@@ -1,17 +1,78 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.title{
+    text-align: center;
+    font-size: 3rem;
+}
 .play-area{
     display: grid;
-    width: 300px;
-    height: 300px;
-    grid-template-columns: auto auto auto;
+    width: 100vw;
+    height: 80vh;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+    cursor: pointer;
 }
 .block{
     display: flex;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border: 3px solid black;
 }
-.block:hover{
-    cursor: pointer;
-    background: blue;
 
+.block.x,
+.block.circle{
+    cursor: not-allowed;
 }
+
+.block.x,
+.play-area.x .block:not(.x):not(.circle):hover{
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.block.circle,
+.play-area.x .block:not(.x):not(.circle):hover{
+    background-color: rgba(0, 0, 255, 1);
+}
+
+.play-area.x .block:not(.x):not(.circle):hover{
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.play-area.circle .block:not(.x):not(.circle):hover{
+    background-color: rgba(0, 0, 255, 0.5);
+}
+.win-msg {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 4rem;
+    flex-direction: column;
+  }
+  
+  .win-msg button {
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .25em .5em;
+    cursor: pointer;
+  }
+  
+  .win-msg button:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+  }
+  
+  .win-msg.show {
+    display: flex;
+  }

@@ -6,25 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Uppgift 6</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h1 class="">Tic Tac Toe</h1>
-        <div class="play-area">
-            <div id="block_0" class="block"></div>
-            <div id="block_1" class="block"></div>
-            <div id="block_2" class="block"></div>
-            <div id="block_3" class="block"></div>
-            <div id="block_4" class="block"></div>
-            <div id="block_5" class="block"></div>
-            <div id="block_6" class="block"></div>
-            <div id="block_7" class="block"></div>
-            <div id="block_8" class="block"></div>
-        </div>
-        <h2 id="winner"></h2>
+    <h1 class="title">Tic Tac Toe</h1>
+    <div class="play-area" id="playArea">
+        <div dataBlock class="block"></div>
+        <div dataBlock class="block"></div>
+        <div dataBlock class="block"></div>
+        <div dataBlock class="block"></div>
+        <div dataBlock class="block"></div>
+        <div dataBlock class="block"></div>
+        <div dataBlock class="block"></div>
+        <div dataBlock class="block"></div>
+        <div dataBlock class="block"></div>
+    </div>
+    <div class="win-msg" id="winMsg">
+        <div dataWinMsgTxt></div>
         <button type="button" id="btn1">Reset</button>
     </div>
-    <button type="button" id="knapp">Byta färg</button>
-    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
